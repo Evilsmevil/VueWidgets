@@ -30,7 +30,7 @@ private onClick(params: Event) : void {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 .slidercontainer {
   width: 100%; /* Width of the outside container */
 }
@@ -57,7 +57,7 @@ private onClick(params: Event) : void {
   width: 25px;
   height: 25px;
   border-radius: 50%; 
-  background: #4CAF50;
+  background: $fg-primary;
   cursor: pointer;
 }
 
@@ -65,7 +65,7 @@ private onClick(params: Event) : void {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: $fg-primary;
   cursor: pointer;
 }
 
