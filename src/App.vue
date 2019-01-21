@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h1>Slider</h1>
+    <h1>Slider Component</h1>
     <div style="width:25%; display:block; margin-left:auto; margin-right:auto;">
       <Slider sliderName="Opacity" v-bind:initialValue="sliderInitialValue" v-model="sliderVal" />
     </div>
-    <h1> {{sliderVal}} </h1>
+    <h3> App owned value: {{sliderVal}} </h3>
   </div>
 </template>
 

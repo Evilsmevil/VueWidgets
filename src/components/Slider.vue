@@ -1,6 +1,6 @@
 <template>
     <div class = "slidercontainer">
-        <span class = "sliderName"> {{sliderName}} </span>
+        <span class = "valueName"> {{sliderName}} </span>
         <input v-model="value" v-on:input="$emit('input', $event.target.value)" type="range" min="1" max="100" class="slider">
         <span class = "valueLabel"> {{value}} </span>
     </div>
@@ -14,7 +14,6 @@ export default class Slider extends Vue {
 
 @Prop() private initialValue! : number;
 @Prop() private sliderName! : string;
-
 private value : number = 0;
 
 private onClick(params: Event) : void {
@@ -30,14 +29,17 @@ private onClick(params: Event) : void {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss"  scoped>
 .slidercontainer {
   width: 100%; /* Width of the outside container */
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .slider {
   -webkit-appearance: none;
-  width: 80%;
+  flex-grow: 1;
   height: 15px;
   border-radius: 5px;  
   background: #d3d3d3;
@@ -48,7 +50,7 @@ private onClick(params: Event) : void {
 }
 
 .valueLabel {
-    width:  10%;
+    flex-grow: 0;
 }
 
 .slider::-webkit-slider-thumb {
