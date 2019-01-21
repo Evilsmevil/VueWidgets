@@ -2,7 +2,7 @@
     <div class = "slidercontainer">
         <span class = "valueName"> {{sliderName}} </span>
         <input v-model="value" v-on:input="$emit('input', $event.target.value)" type="range" min="1" max="100" class="slider">
-        <span class = "valueLabel"> {{value}} </span>
+        <span class = "valueDigits"> {{value}} </span>
     </div>
 </template>
 
@@ -49,8 +49,12 @@ private onClick(params: Event) : void {
   transition: opacity .2s;
 }
 
-.valueLabel {
+.valueName {
     flex-grow: 0;
+}
+
+.valueDigits {
+    min-width: 3em;
 }
 
 .slider::-webkit-slider-thumb {
