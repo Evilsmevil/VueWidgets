@@ -1,27 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <h1>Slider Component</h1>
-    <div style="width:25%; display:block; margin-left:auto; margin-right:auto;">
-      <Slider sliderName="Opacity" v-bind:initialValue="sliderInitialValue" v-model="sliderVal" />
-    </div>
-    <h3> App owned value: {{sliderVal}} </h3>
+    <Editor class="myTable"/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Slider from './components/Slider.vue';
+import Editor from './components/Editor.vue';
 
 @Component({
   components: {
     Slider,
+    Editor,
   },
 })
 
 export default class App extends Vue {
-  private sliderInitialValue : number = 13;
-  private sliderVal : number = this.sliderInitialValue;
+  private sliderInitialValue: number = 13;
+  private sliderVal: number = this.sliderInitialValue;
 
 }
 
@@ -35,5 +32,7 @@ export default class App extends Vue {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  height: 100%;
 }
+
 </style>

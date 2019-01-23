@@ -12,19 +12,19 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class Slider extends Vue {
 
-@Prop() private initialValue! : number;
-@Prop() private sliderName! : string;
-private value : number = 0;
+@Prop() private initialValue!: number;
+@Prop() private sliderName!: string;
+private value: number = 0;
 
-private onClick(params: Event) : void {
-      console.log("Hi!" + params.timeStamp);
+public data() {
+    return {
+        value: this.initialValue,
+    };
   }
 
-  data () {
-      return {
-          value : this.initialValue
-      }
-  }
+
+// private onClick(params: Event) : void {
+//   }
 }
 </script>
 
@@ -51,10 +51,13 @@ private onClick(params: Event) : void {
 
 .valueName {
     flex-grow: 0;
+    min-width: 100px;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .valueDigits {
-    min-width: 3em;
+    min-width: 2em;
 }
 
 .slider::-webkit-slider-thumb {
